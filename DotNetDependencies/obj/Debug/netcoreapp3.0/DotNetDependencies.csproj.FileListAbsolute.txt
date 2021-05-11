@@ -53,3 +53,8 @@ C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0
 C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\zh-Hans\Humanizer.resources.dll
 C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\zh-Hant\Humanizer.resources.dll
 C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\obj\Debug\netcoreapp3.0\DotNetDependencies.csproj.CopyComplete
+C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\az\Humanizer.resources.dll
+C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\hy\Humanizer.resources.dll
+C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\ko-KR\Humanizer.resources.dll
+C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\ku\Humanizer.resources.dll
+C:\Users\hakimyanov.DKIS\OneDrive\WEB\DotNetDependencies\bin\Debug\netcoreapp3.0\th-TH\Humanizer.resources.dll

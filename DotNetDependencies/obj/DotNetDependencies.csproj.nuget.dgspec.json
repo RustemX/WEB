@@ -43,7 +43,7 @@
           "dependencies": {
             "Humanizer": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[2.10.1, )"
             }
           },
           "imports": [
