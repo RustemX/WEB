@@ -1,0 +1,13 @@
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.exe
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.deps.json
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.runtimeconfig.json
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.runtimeconfig.dev.json
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.dll
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\bin\Debug\netcoreapp3.1\DotNetDebugging.pdb
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.csprojAssemblyReference.cache
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.AssemblyInfoInputs.cache
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.AssemblyInfo.cs
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.csproj.CoreCompileInputs.cache
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.dll
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.pdb
+C:\Users\ruste\OneDrive\WEB\DotNetDebugging\obj\Debug\netcoreapp3.1\DotNetDebugging.genruntimeconfig.cache
