@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wcyIts4dnJ6keQBptmXaQYU1lpIOpmX08hlQIV/gYiGOWJZJ2RcHqZNUJFxN7EQDc5bsj0wcoDYLAamcpIUtSA==",
+  "dgSpecHash": "ca5+ldMCu6RYhdXE89eFatvkut0nrrZiRDM7WY3U++/XWOCjIdab2NyrE3rE7lu8hER8Cu/HXEAy5sI6fwdv7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\ruste\\OneDrive\\WEB\\DotNetDebugging\\DotNetDebugging.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ruste\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\ruste\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.15\\microsoft.netcore.app.host.win-x64.3.1.15.nupkg.sha512"
+  ],
   "logs": []
 }
