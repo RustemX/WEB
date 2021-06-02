@@ -4,205 +4,542 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Get Started C#</title>
+    <style>
+        
+        html, body{
+            min-width: 290px;
+            color: #4d4d4d;
+            background-color:#ffffff;
+            font-family: 'OpenSans',Arial, sans-serif;
+        }
+        #navbar{
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+        }
+        header{
+            color:black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+        #main-doc header{
+            text-align: left;
+            margin: 0px;
+        }
+        #navbar ul{
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #navbar li{
+            color:#4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width:100%
+        }
+        #navbar a{
+            display: block;
+            padding: 10px 30px;
+            color: #4d4e53;
+            text-decoration: none;
+            cursor:pointer;
+        }
+        #main-doc{
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+        section article{
+            color: #4d4e53;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+        section li{
+            margin: 15px 0px 0px 20px;
+        }
+
+        code{
+            font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+            direction: ltr;
+        }
+        pre{
+            font-size: .875rem;
+            overflow: auto;
+            background-color:hsla(0,0%,98%,1);
+            border: 1px solid #e3e3e3;
+            padding: 1rem;
+            margin: 1rem 0 0;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            tab-size: 4;
+            hyphens: none;
+            line-height: 1.3571;
+        }
+        .line-highlight {
+            background-color: #ffc;
+            }
+
+        .hljs-comment {
+	            color: #008000;
+            }
+
+        .hljs-pscommand,
+        .hljs-keyword,
+        .hljs-selector-tag,
+        .hljs-built_in,
+        .hljs-name,
+        .hljs-tag {
+            color: #0101fd;
+        }
+
+        .hljs-literal {
+            color: darken(#09885a, 5%);
+        }
+        .hljs-string .hljs-subst {
+            color: text;
+        }
+
+        .hljs-string,
+        .hljs-string .hljs-subst .hljs-string,
+        .hljs-section,
+        .hljs-template-tag,
+        .hljs-template-variable,
+        .hljs-deletion,
+        .hljs-code {
+            color: #a31515;
+        }
+
+        .hljs-parameter,
+        .hljs-type,
+        .hljs-attribute,
+        .hljs-title,
+        .hljs-addition,
+        .hljs-selector-attr,
+        .hljs-selector-pseudo,
+        .hljs-meta {
+            color: #007d9a;
+        }
+
+        .hljs-doctag {
+            color: #737373;
+        }
+
+        .hljs-attr {
+            color: #0451a5;
+        }
+
+        .hljs-control {
+            color: #af00db;
+        }
+
+        .hljs-helper {
+            color: #795e26;
+        }
+
+        .hljs-symbol,
+        .hljs-bullet,
+        .hljs-link {
+            color: #0071e1;
+        }
+
+        .hljs-emphasis {
+            font-style: italic;
+        }
+
+        .hljs-strong {
+            font-weight: weight-semibold;
+        }
+
+        .hljs-reserved,
+        .hljs-constant {
+            color: #cd3131;
+        }
+
+        .alert.is-info {
+            background-color: hsla(262,46%,90%,1);
+            border: 1px solid hsla(262,46%,90%,.999);
+            }
+        .alert {
+            display: block;
+            position: relative;
+            border-radius: 6px;
+            font-size: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            background-color: hsla(0,0%,95%,1);
+            outline-color: hsla(0,0%,9%,1);
+            color: hsla(0,0%,9%,1);
+            transition: height .5s ease-in,opacity .5s ease-in;
+            word-wrap: break-word;
+            word-break: break-word;
+            border: 1px solid hsla(0,0%,100%,0);
+            }
+            .alert.alert.is-info.alert-title{
+                color: hsla(262,46%,25%,1);
+            }
+            .docon {
+                    font-family: docons;
+                    font-size: inherit;    
+                    display: inline-block;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-variant: normal;
+                    text-transform: none;
+                    text-align: center;
+                    direction: ltr;
+                    line-height: 16px;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+                @media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
+    </style>
 </head>
 <body>
-    <div id="main-doc">
-        <section id="main-section introduction">
-            <h1>A tour of the C# language</h1>
-            <p>C# (pronounced "See Sharp") is a modern, object-oriented, and type-safe programming language. C# enables developers to build many types of secure and robust applications that run in the .NET ecosystem. C# has its roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript programmers. This tour provides an overview of the major components of the language in C# 8 and earlier. If you want to explore the language through interactive examples, try the introduction to C# tutorials.</p>
-            <p>C# is an object-oriented, component-oriented programming language. C# provides language constructs to directly support these concepts, making C# a natural language in which to create and use software components. Since its origin, C# has added features to support new workloads and emerging software design practices.</p>
-            <p>Several C# features help create robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Nullable types guard against variables that don't refer to allocated objects. Exception handling provides a structured and extensible approach to error detection and recovery. Lambda expressions support functional programming techniques. Language Integrated Query (LINQ) syntax creates a common pattern for working with data from any source. Language support for asynchronous operations provides syntax for building distributed systems. C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. All types share a set of common operations. Values of any type can be stored, transported, and operated upon in a consistent manner. Furthermore, C# supports both user-defined reference types and value types. C# allows dynamic allocation of objects and in-line storage of lightweight structures. C# supports generic methods and types, which provide increased type safety and performance. C# provides iterators, which enable implementers of collection classes to define custom behaviors for client code.</p>
-            <p>C# emphasizes versioning to ensure programs and libraries can evolve over time in a compatible manner. Aspects of C#'s design that were directly influenced by versioning considerations include the separate virtual and override modifiers, the rules for method overload resolution, and support for explicit interface member declarations.</p>
-            <h2>.NET architecture</h2>
-            <p>C# programs run on .NET, a virtual execution system called the common language runtime (CLR) and a set of class libraries. The CLR is the implementation by Microsoft of the common language infrastructure (CLI), an international standard. The CLI is the basis for creating execution and development environments in which languages and libraries work together seamlessly.</p>
-            <p>Source code written in C# is compiled into an intermediate language (IL) that conforms to the CLI specification. The IL code and resources, such as bitmaps and strings, are stored in an assembly, typically with an extension of .dll. An assembly contains a manifest that provides information about the assembly's types, version, and culture.</p>
-            <p>When the C# program is executed, the assembly is loaded into the CLR. The CLR performs Just-In-Time (JIT) compilation to convert the IL code to native machine instructions. The CLR provides other services related to automatic garbage collection, exception handling, and resource management. Code that's executed by the CLR is sometimes referred to as "managed code," in contrast to "unmanaged code," which is compiled into native machine language that targets a specific platform.</p>
-            <p>Language interoperability is a key feature of .NET. IL code produced by the C# compiler conforms to the Common Type Specification (CTS). IL code generated from C# can interact with code that was generated from the .NET versions of F#, Visual Basic, C++, or any of more than 20 other CTS-compliant languages. A single assembly may contain multiple modules written in different .NET languages, and the types can reference each other as if they were written in the same language.</p>
-            <p>In addition to the run time services, .NET also includes extensive libraries. These libraries support many different workloads. They're organized into namespaces that provide a wide variety of useful functionality for everything from file input and output to string manipulation to XML parsing, to web application frameworks to Windows Forms controls. The typical C# application uses the .NET class library extensively to handle common "plumbing" chores.</p>
-            <p>For more information about .NET, see <a href="#">Overview of .NET.</a></p>
-            <h2>Hello world</h2>
-            <p>The "Hello, World" program is traditionally used to introduce a programming language. Here it is in C#:</p>
-            <code>
-                    using System;
-
-                    class Hello
-                    {
-                        static void Main()
-                        {
-                            Console.WriteLine("Hello, World");
-                        }
-                    }       
-            </code>
-            <p>The "Hello, World" program starts with a using directive that references the System namespace. Namespaces provide a hierarchical means of organizing C# programs and libraries. Namespaces contain types and other namespaces—for example, the System namespace contains a number of types, such as the Console class referenced in the program, and a number of other namespaces, such as IO and Collections. A using directive that references a given namespace enables unqualified use of the types that are members of that namespace. Because of the using directive, the program can use Console.WriteLine as shorthand for System.Console.WriteLine.</p>
-            <p>The Hello class declared by the "Hello, World" program has a single member, the method named Main. The Main method is declared with the static modifier. While instance methods can reference a particular enclosing object instance using the keyword this, static methods operate without reference to a particular object. By convention, a static method named Main serves as the entry point of a C# program.</p>
-            <p>The output of the program is produced by the WriteLine method of the Console class in the System namespace. This class is provided by the standard class libraries, which, by default, are automatically referenced by the compiler.</p>
-        <h2>Types and variables</h2>
-        <p>There are two kinds of types in C#: value types and reference types. Variables of value types directly contain their data. Variables of reference types store references to their data, the latter being known as objects. With reference types, it's possible for two variables to reference the same object and possible for operations on one variable to affect the object referenced by the other variable. With value types, the variables each have their own copy of the data, and it isn't possible for operations on one to affect the other (except for ref and out parameter variables).</p>
-        <p>An identifier is a variable name. An identifier is a sequence of unicode characters without any whitespace. An identifier may be a C# reserved word, if it's prefixed by @. Using a reserved word as an identifier can be useful when interacting with other languages.</p>
-        <p>C#'s value types are further divided into simple types, enum types, struct types, nullable value types, and tuple value types. C#'s reference types are further divided into class types, interface types, array types, and delegate types.</p>
-        <p>The following outline provides an overview of C#'s type system.</p>
+    <nav id="navbar">
+        <header>Get Started</header>
         <ul>
-            <li>Value types
-                <ul>
-                    <li>Simple types
-                        <ul>
-                            <li>Signed integral: sbyte, short, int, long</li>
-                            <li>Unsigned integral: byte, ushort, uint, ulong</li>
-                            <li>Unicode characters: char, which represents a UTF-16 code unit</li>
-                            <li>IEEE binary floating-point: float, double</li>
-                            <li>High-precision decemal floating-point: decimal </li>
-                            <li>Boolean: bool, wich represents Boolean values-values that are either true or false</li>
-                        </ul>
-                    </li>
-                    <li>Enum types
-                        <ul>
-                            <li>User-defined types of the form enum E {...}. An enum type is a distinct type with named constants. Every enum type has an underlying type, which must be one of the eight integral types. The set of values of an enum type is the same as the set of values of the underlying type.</li>
-                        </ul>
-                    </li>                
-                    <li>Struct types
-                    <ul>
-                        <li>User-defined types of the form struct S{...}</li>
-                    </ul>
-                    </li>
-                    <li>Nullable value types
-                    <ul>
-                        <li>Extension of all other values types with a null value</li>
-                    </ul>
-                    </li>
-                    <li>Tuple value types
-                    <ul>
-                        <li>User-defined types of the form(T1, T2, ...)</li>
-                    </ul>
-                    </li>
-                </ul>
+            <li>
+                <a class="nav-link" href="#A_tour_of_the_C#_language">A tour of the C# language</a>
             </li>
-            <li>Reference types
-                <ul>
-                    <li>Class types
-                        <ul>
-                            <li>Ultimate base class of all other types: object</li>
-                            <li>Unicode strings: string, which represents a sequence of UTF-16 code units</li>
-                            <li>User-defined types of the form class C {...}</li>
-                        </ul>
-                    </li>
-                    <li>Interface types
-                        <ul>
-                            <li>User-defined types of the form interface I{...}</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Array types
-                        <ul>
-                            <li>Single-dimensional, multi-dimensional and jagged. For exampe: int[],int[,], and int[][]</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Delegate types<ul><li>User-defined types of the form delegate int D(...)</li></ul>
-                    </li>
-                </ul>
+            <li>
+                <a class="nav-link" href="#.NET_architecture">.NET architecture</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Hello_world">Hello World</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Types_and_variables">Types and variables</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Programm_structure">Programm structure</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Examples">Examples</a>
             </li>
         </ul>
-        <p>C# programs use type declarations to create new types. A type declaration specifies the name and the members of the new type. Six of C#'s categories of types are user-definable: class types, struct types, interface types, enum types, delegate types, and tuple value types.</p>
-        <ul>
-            <li>A class type defines a data structure that contains data members (fields) and function members (methods, properties, and others). Class types support single inheritance and polymorphism, mechanisms whereby derived classes can extend and specialize base classes.</li>
-            <li>A struct type is similar to a class type in that it represents a structure with data members and function members. However, unlike classes, structs are value types and don't typically require heap allocation. Struct types don't support user-specified inheritance, and all struct types implicitly inherit from type object.</li>
-            <li>An interface type defines a contract as a named set of public members. A class or struct that implements an interface must provide implementations of the interface's members. An interface may inherit from multiple base interfaces, and a class or struct may implement multiple interfaces.</li>
-            <li>A delegate type represents references to methods with a particular parameter list and return type. Delegates make it possible to treat methods as entities that can be assigned to variables and passed as parameters. Delegates are analogous to function types provided by functional languages. They're also similar to the concept of function pointers found in some other languages. Unlike function pointers, delegates are object-oriented and type-safe.</li>
-        </ul>
-        <p>The class, struct, interface, and delegate types all support generics, whereby they can be parameterized with other types.</p>
-        <p>C# supports single-dimensional and multi-dimensional arrays of any type. Unlike the types listed above, array types don't have to be declared before they can be used. Instead, array types are constructed by following a type name with square brackets. For example, int[] is a single-dimensional array of int, int[,] is a two-dimensional array of int, and int[][] is a single-dimensional array of single-dimensional arrays, or a "jagged" array, of int.</p>
-        <p>Nullable types don't require a separate definition. For each non-nullable type T, there's a corresponding nullable type T?, which can hold an additional value, null. For instance, int? is a type that can hold any 32-bit integer or the value null, and string? is a type that can hold any string or the value null.</p>
-        <p>C#'s type system is unified such that a value of any type can be treated as an object. Every type in C# directly or indirectly derives from the object class type, and object is the ultimate base class of all types. Values of reference types are treated as objects simply by viewing the values as type object. Values of value types are treated as objects by performing boxing and unboxing operations. In the following example, an int value is converted to object and back again to int.</p>
-        <code>int i = 123;
-            object o = i;    // Boxing
-            int j = (int)o;  // Unboxing</code>
-        <p>When a value of a value type is assigned to an object reference, a "box" is allocated to hold the value. That box is an instance of a reference type, and the value is copied into that box. Conversely, when an object reference is cast to a value type, a check is made that the referenced object is a box of the correct value type. If the check succeeds, the value in the box is copied to the value type.</p>
-        <p>C#'s unified type system effectively means that value types are treated as object references "on demand." Because of the unification, general-purpose libraries that use type object can be used with all types that derive from object, including both reference types and value types.</p>
-        <p>There are several kinds of variables in C#, including fields, array elements, local variables, and parameters. Variables represent storage locations. Every variable has a type that determines what values can be stored in the variable, as shown below.</p>
-        <ul>
-            <li>Non-nullable value type<ul><li>A value of that exact type</li></ul></li>
-            <li>Nullable value type
-                <ul><li>A null value or a value of that exact type</li></ul>
-            </li>
-            <li>object<ul><li>A null reference, areference to an object of any reference type, or a reference to a boxed vlue of any value type</li></ul></li>
-            <li>Class type<ul><li>A null referrnce, a reference to an insrance of that class type, or a refernce to boxed value of any value type</li></ul></li>
-            <li>Interface type<ul><li>
-                A null reference, a reference to an instance of a class type that implements that interface type, or a reference to a boxed value of a value type that implements that interface type
-            </li></ul></li>
-            <li>Array type<ul><li>
-                A null reference, a reference to an instance of that array type, or a reference to an instance of a compatible array type
-            </li></ul></li>
-            <li>Delegate type<ul><li>A null reference or a reference to an instance of a compatible delegate type</li></ul></li>
-        </ul>
-        <h2>Program structure</h2>
-        <p>The key organizational concepts in C# are programs, namespaces, types, members, and assemblies. Programs declare types, which contain members and can be organized into namespaces. Classes, structs, and interfaces are examples of types. Fields, methods, properties, and events are examples of members. When C# programs are compiled, they're physically packaged into assemblies. Assemblies typically have the file extension .exe or .dll, depending on whether they implement applications or libraries, respectively.</p>
-        <p>As a small example, consider an assembly that contains the following code:</p>
-        <code>using System;
-
-            namespace Acme.Collections
-            {
-                public class Stack<T>
-                {
-                    Entry _top;
-                    
-                    public void Push(T data)
-                    {
-                        _top = new Entry(_top, data);
-                    }
-            
-                    public T Pop()
-                    {
-                        if (_top == null)
-                        {
-                            throw new InvalidOperationException();
-                        }
-                        T result = _top.Data;
-                        _top = _top.Next;
-                        
-                        return result;
-                    }
-            
-                    class Entry
-                    {
-                        public Entry Next { get; set; }
-                        public T Data { get; set; }
-                        
-                        public Entry(Entry next, T data)
-                        {
-                            Next = next;
-                            Data = data;
-                        }
-                    }
-                }
-            }</code>
-            <p> The fully qualified name of this class is Acme.Collections.Stack. The class contains several members: a field named top, two methods named Push and Pop, and a nested class named Entry. The Entry class further contains three members: a field named next, a field named data, and a constructor. The Stack is a generic class. It has one type parameter, T that is replaced with a concrete type when it's used.</p>
-            <div class="alert is-info">
-                <p class="alert-title">
-                    Note
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="A_tour_of_the_C#_language">
+            <header>A tour of the C# language</header>
+            <article>
+                <p>C# (pronounced "See Sharp") is a modern, object-oriented, and type-safe programming language. C# enables developers to build many types of secure and robust applications that run in the .NET ecosystem. C# has its roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript programmers. This tour provides an overview of the major components of the language in C# 8 and earlier. If you want to explore the language through interactive examples, try the introduction to C# tutorials.</p>
+                <p>C# is an object-oriented, component-oriented programming language. C# provides language constructs to directly support these concepts, making C# a natural language in which to create and use software components. Since its origin, C# has added features to support new workloads and emerging software design practices.</p>
+                <p>Several C# features help create robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Nullable types guard against variables that don't refer to allocated objects. Exception handling provides a structured and extensible approach to error detection and recovery. Lambda expressions support functional programming techniques. Language Integrated Query (LINQ) syntax creates a common pattern for working with data from any source. Language support for asynchronous operations provides syntax for building distributed systems. C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. All types share a set of common operations. Values of any type can be stored, transported, and operated upon in a consistent manner. Furthermore, C# supports both user-defined reference types and value types. C# allows dynamic allocation of objects and in-line storage of lightweight structures. C# supports generic methods and types, which provide increased type safety and performance. C# provides iterators, which enable implementers of collection classes to define custom behaviors for client code.</p>
+                <p>C# emphasizes versioning to ensure programs and libraries can evolve over time in a compatible manner. Aspects of C#'s design that were directly influenced by versioning considerations include the separate virtual and override modifiers, the rules for method overload resolution, and support for explicit interface member declarations.</p>
+            </article>
+        </section>
+        <section class="main-section" id=".NET_architecture">
+            <header>.NET architecture</header>
+            <article>
+                <p>
+                    C# programs run on .NET, a virtual execution system called the common language runtime (CLR) and a set of class libraries. The CLR is the implementation by Microsoft of the common language infrastructure (CLI), an international standard. The CLI is the basis for creating execution and development environments in which languages and libraries work together seamlessly.
                 </p>
                 <p>
-                    A stack is a "first in - last out" (FILO) collection. New elements are added to the top of the stack. When an element is removed, it is removed from the top of the stack.
+                    Source code written in C# is compiled into an intermediate language (IL) that conforms to the CLI specification. The IL code and resources, such as bitmaps and strings, are stored in an assembly, typically with an extension of .dll. An assembly contains a manifest that provides information about the assembly's types, version, and culture.
                 </p>
-            </div>
+                <p>When the C# program is executed, the assembly is loaded into the CLR. The CLR performs Just-In-Time (JIT) compilation to convert the IL code to native machine instructions. The CLR provides other services related to automatic garbage collection, exception handling, and resource management. Code that's executed by the CLR is sometimes referred to as "managed code," in contrast to "unmanaged code," which is compiled into native machine language that targets a specific platform.</p>
+                <p>
+                    Language interoperability is a key feature of .NET. IL code produced by the C# compiler conforms to the Common Type Specification (CTS). IL code generated from C# can interact with code that was generated from the .NET versions of F#, Visual Basic, C++, or any of more than 20 other CTS-compliant languages. A single assembly may contain multiple modules written in different .NET languages, and the types can reference each other as if they were written in the same language.
+                </p>
+                <p>
+                    In addition to the run time services, .NET also includes extensive libraries. These libraries support many different workloads. They're organized into namespaces that provide a wide variety of useful functionality for everything from file input and output to string manipulation to XML parsing, to web application frameworks to Windows Forms controls. The typical C# application uses the .NET class library extensively to handle common "plumbing" chores.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Hello_world">
+            <header>Hello world</header>
+            <article><p>The "Hello, World" program is traditionally used to introduce a programming language. Here it is in C#:</p>
+            <pre tabindex="0"><code>
+                <span class="hljs-keyword">using</span> System;
+
+                <span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span>
+                
+                {
+                    <span class="hljs-function">
+                        <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span>
+                    {
+                        Console.WriteLine(<span class="hljs-string">"Hello, World"</span>);
+                    }
+                }
+            </code></pre>
             <p>
-                Assemblies contain executable code in the form of Intermediate Language (IL) instructions, and symbolic information in the form of metadata. Before it's executed, the Just-In-Time (JIT) compiler of .NET Common Language Runtime converts the IL code in an assembly to processor-specific code.
-            </p>
-            <p>Because an assembly is a self-describing unit of functionality containing both code and metadata, there's no need for #include directives and header files in C#. The public types and members contained in a particular assembly are made available in a C# program simply by referencing that assembly when compiling the program. For example, this program uses the Acme.Collections.Stack class from the acme.dll assembly:</p>
+                The "Hello, World" program starts with a using directive that references the System namespace. Namespaces provide a hierarchical means of organizing C# programs and libraries. Namespaces contain types and other namespaces—for example, the System namespace contains a number of types, such as the Console class referenced in the program, and a number of other namespaces, such as IO and Collections. A using directive that references a given namespace enables unqualified use of the types that are members of that namespace. Because of the using directive, the program can use Console.WriteLine as shorthand for System.Console.WriteLine.</p>
+                <p>The Hello class declared by the "Hello, World" program has a single member, the method named Main. The Main method is declared with the static modifier. While instance methods can reference a particular enclosing object instance using the keyword this, static methods operate without reference to a particular object. By convention, a static method named Main serves as the entry point of a C# program.</p>
+                <p>The output of the program is produced by the WriteLine method of the Console class in the System namespace. This class is provided by the standard class libraries, which, by default, are automatically referenced by the compiler.</p></article>
         </section>
-        
-        <section id="main-section">
-            <h2></h2>
+        <section class="main-section" id="Types_and_variables">
+                <header>Types and variables</header>
+                <article><p>There are two kinds of types in C#: value types and reference types. Variables of value types directly contain their data. Variables of reference types store references to their data, the latter being known as objects. With reference types, it's possible for two variables to reference the same object and possible for operations on one variable to affect the object referenced by the other variable. With value types, the variables each have their own copy of the data, and it isn't possible for operations on one to affect the other (except for ref and out parameter variables).</p>
+
+                <p>An identifier is a variable name. An identifier is a sequence of unicode characters without any whitespace. An identifier may be a C# reserved word, if it's prefixed by @. Using a reserved word as an identifier can be useful when interacting with other languages.</p>
+                    
+                <p>C#'s value types are further divided into simple types, enum types, struct types, nullable value types, and tuple value types. C#'s reference types are further divided into class types, interface types, array types, and delegate types.</p>
+                    
+                <p>The following outline provides an overview of C#'s type system.</p>
+                <ul>
+                    <li>Value types
+                        <ul>
+                            <li>Simple types
+                                <ul>
+                                    <li>Signed integral: sbyte, short, int, long</li>
+                                    <li>Unsigned integral: byte, ushort, uint, ulong</li>
+                                    <li>Unicode characters: char, which represents a UTF-16 code unit</li>
+                                    <li>IEEE binary floating-point: float, double</li>
+                                    <li>High-precision decimal floating-point: decimal</li>
+                                    <li>Boolean: bool, which represents Boolean values—values that are either true or false</li>
+                                </ul>
+                            </li>
+                            <li>Enum types
+                                <ul>
+                                    <li>User-defined types of the form enum E {...}. An enum type is a distinct type with named constants. Every enum type has an underlying type, which must be one of the eight integral types. The set of values of an enum type is the same as the set of values of the underlying type.</li>
+                                </ul>
+                            </li>
+                            <li>Struct types
+                                <ul>
+                                   <li>
+                                    User-defined types of the form struct S {...}
+                                   </li>     
+                                </ul>
+                            </li>
+                            <li>Nullable value types
+                                <ul>
+                                    <li>Extensions of all other value types with a null value</li>
+                                </ul>
+                            </li>
+                            <li>Tuple value types
+                                <ul>
+                                    <li>User-defined types of the form (T1, T2, ...)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Reference types
+                        <ul>
+                            <li>Class types
+                                <ul>
+                                    <li>Ultimate base class of all other types: object</li>
+                                    <li>Unicode strings: string, which represents a sequence of UTF-16 code units</li>
+                                    <li>User-defined types of the form class C {...}</li>
+                                </ul>
+                            </li>
+                            <li>Interface types
+                                <ul>
+                                    <li>User-defined types of the form interface I {...}</li>
+                                </ul>
+                            </li>
+                            <li>Array types
+                                <ul><li>Single-dimensional, multi-dimensional, and jagged. For example: int[], int[,], and int[][]</li></ul>
+                            </li>
+                            <li>Delegate types
+                                <ul>
+                                    <li>User-defined types of the form delegate int D(...)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    C# programs use type declarations to create new types. A type declaration specifies the name and the members of the new type. Six of C#'s categories of types are user-definable: class types, struct types, interface types, enum types, delegate types, and tuple value types.
+                </p>
+                <ul>
+                    <li>A class type defines a data structure that contains data members (fields) and function members (methods, properties, and others). Class types support single inheritance and polymorphism, mechanisms whereby derived classes can extend and specialize base classes.</li>
+                    <li>A struct type is similar to a class type in that it represents a structure with data members and function members. However, unlike classes, structs are value types and don't typically require heap allocation. Struct types don't support user-specified inheritance, and all struct types implicitly inherit from type object.</li>
+                    <li>An interface type defines a contract as a named set of public members. A class or struct that implements an interface must provide implementations of the interface's members. An interface may inherit from multiple base interfaces, and a class or struct may implement multiple interfaces.</li>
+                    <li>A delegate type represents references to methods with a particular parameter list and return type. Delegates make it possible to treat methods as entities that can be assigned to variables and passed as parameters. Delegates are analogous to function types provided by functional languages. They're also similar to the concept of function pointers found in some other languages. Unlike function pointers, delegates are object-oriented and type-safe.</li>
+                </ul>
+                <p>The class, struct, interface, and delegate types all support generics, whereby they can be parameterized with other types.</p>
+                <p>The class, struct, interface, and delegate types all support generics, whereby they can be parameterized with other types.</p>
+                <p>Nullable types don't require a separate definition. For each non-nullable type T, there's a corresponding nullable type T?, which can hold an additional value, null. For instance, int? is a type that can hold any 32-bit integer or the value null, and string? is a type that can hold any string or the value null.</p>
+                <p>C#'s type system is unified such that a value of any type can be treated as an object. Every type in C# directly or indirectly derives from the object class type, and object is the ultimate base class of all types. Values of reference types are treated as objects simply by viewing the values as type object. Values of value types are treated as objects by performing boxing and unboxing operations. In the following example, an int value is converted to object and back again to int.</p>
+                <pre tabindex="0">
+                    <code>
+                        <span class="hljs-keyword">int</span> i = <span class="hljs-number">123</span>;
+                        <span class="hljs-keyword">object</span> o = i;    <span class="hljs-comment">// Boxing</span>
+                        <span class="hljs-keyword">int</span> j = (<span class="hljs-keyword">int</span>)o;  <span class="hljs-comment">// Unboxing</span>
+                    </code>
+                </pre>
+                <p>When a value of a value type is assigned to an object reference, a "box" is allocated to hold the value. That box is an instance of a reference type, and the value is copied into that box. Conversely, when an object reference is cast to a value type, a check is made that the referenced object is a box of the correct value type. If the check succeeds, the value in the box is copied to the value type.</p>
+                <p>C#'s unified type system effectively means that value types are treated as object references "on demand." Because of the unification, general-purpose libraries that use type object can be used with all types that derive from object, including both reference types and value types.</p>
+                <p>There are several kinds of variables in C#, including fields, array elements, local variables, and parameters. Variables represent storage locations. Every variable has a type that determines what values can be stored in the variable, as shown below.</p>
+                <ul>
+                    <li>Non-nullable value type
+                        <ul>
+                            <li>A value of that exact type</li>
+                        </ul>
+                    </li>
+                    <li>Nullable value type
+                        <ul>
+                            <li>A null value or a value of that exact type</li>
+                        </ul>
+                    </li>
+                    <li>object
+                        <ul>
+                            <li>A null reference, a reference to an object of any reference type, or a reference to a boxed value of any value type</li>
+                        </ul>
+                    </li>
+                    <li>Class type
+                        <ul>
+                            <li>A null reference, a reference to an instance of that class type, or a reference to an instance of a class derived from that class type</li>
+                        </ul>
+                    </li>
+                    <li>Interface type
+                        <ul>
+                            <li>A null reference, a reference to an instance of a class type that implements that interface type, or a reference to a boxed value of a value type that implements that interface type</li>
+                        </ul>
+                    </li>
+                    <li>Array type
+                        <ul>
+                            <li>A null reference, a reference to an instance of that array type, or a reference to an instance of a compatible array type</li>
+                        </ul>
+                    </li>
+                    <li>Delegate type
+                        <ul>
+                            <li>A null reference or a reference to an instance of a compatible delegate type</li>
+                        </ul>
+                    </li>
+                </ul>
+                </article>
         </section>
-        <section id="main-section">
-            <h2></h2>
+        <section class="main-section" id="Programm_structure">
+            <header>Programm structure</header>
+            <article>
+            <p>he key organizational concepts in C# are programs, namespaces, types, members, and assemblies. Programs declare types, which contain members and can be organized into namespaces. Classes, structs, and interfaces are examples of types. Fields, methods, properties, and events are examples of members. When C# programs are compiled, they're physically packaged into assemblies. Assemblies typically have the file extension .exe or .dll, depending on whether they implement applications or libraries, respectively.</p>
+            <pre tabindex="0" ><code><span><span class="hljs-keyword">using</span> System;
+                
+                <span class="hljs-keyword">namespace</span> <span class="hljs-title">Acme.Collections</span>
+                {
+                    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span>&lt;<span class="hljs-title">T</span>&gt;
+                    {
+                        Entry _top;
+                        
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Push</span>(<span class="hljs-params">T data</span>)</span>
+                        {
+                            _top = <span class="hljs-keyword">new</span> Entry(_top, data);
+                        }
+                
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">Pop</span>(<span class="hljs-params"></span>)</span>
+                        {
+                            <span class="hljs-keyword">if</span> (_top == <span class="hljs-literal">null</span>)
+                            {
+                                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidOperationException();
+                            }
+                            T result = _top.Data;
+                            _top = _top.Next;
+                            
+                            <span class="hljs-keyword">return</span> result;
+                        }
+                
+                        <span class="hljs-keyword">class</span> <span class="hljs-title">Entry</span>
+                        {
+                            <span class="hljs-keyword">public</span> Entry Next { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+                            <span class="hljs-keyword">public</span> T Data { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+                            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Entry</span>(<span class="hljs-params">Entry next, T data</span>)</span>
+            {
+                Next = next;
+                Data = data;
+            }
+        }
+    }
+}
+</span></code></pre>
+<p>The fully qualified name of this class is Acme.Collections.Stack. The class contains several members: a field named top, two methods named Push and Pop, and a nested class named Entry. The Entry class further contains three members: a field named next, a field named data, and a constructor. The Stack is a generic class. It has one type parameter, T that is replaced with a concrete type when it's used.</p>
+<div class="alert is-info">
+    <p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+    <p>A <em>stack</em> is a "first in - last out" (FILO) collection. New elements are added to the top of the stack. When an element is removed, it is removed from the top of the stack.</p>
+    </div>
+
+<p>Assemblies contain executable code in the form of Intermediate Language (IL) instructions, and symbolic information in the form of metadata. Before it's executed, the Just-In-Time (JIT) compiler of .NET Common Language Runtime converts the IL code in an assembly to processor-specific code.</p>
+<p>Because an assembly is a self-describing unit of functionality containing both code and metadata, there's no need for #include directives and header files in C#. The public types and members contained in a particular assembly are made available in a C# program simply by referencing that assembly when compiling the program. For example, this program uses the Acme.Collections.Stack class from the acme.dll assembly:</p>
+<pre tabindex="0"><code><span><span class="hljs-keyword">using</span> System;
+    <span class="hljs-keyword">using</span> Acme.Collections;
+    
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Example</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span>
+        {
+            <span class="hljs-keyword">var</span> s = <span class="hljs-keyword">new</span> Stack&lt;<span class="hljs-keyword">int</span>&gt;();
+            s.Push(<span class="hljs-number">1</span>); <span class="hljs-comment">// stack contains 1</span>
+            s.Push(<span class="hljs-number">10</span>); <span class="hljs-comment">// stack contains 1, 10</span>
+            s.Push(<span class="hljs-number">100</span>); <span class="hljs-comment">// stack contains 1, 10, 100</span>
+            Console.WriteLine(s.Pop()); <span class="hljs-comment">// stack contains 1, 10</span>
+            Console.WriteLine(s.Pop()); <span class="hljs-comment">// stack contains 1</span>
+            Console.WriteLine(s.Pop()); <span class="hljs-comment">// stack is empty</span>
+        }
+    }
+    </span></code></pre>
+    <p>To compile this program, you would need to reference the assembly containing the stack class defined in the earlier example.</p>
+    <p>C# programs can be stored in several source files. When a C# program is compiled, all of the source files are processed together, and the source files can freely reference each other. Conceptually, it's as if all the source files were concatenated into one large file before being processed. Forward declarations are never needed in C# because, with few exceptions, declaration order is insignificant. C# doesn't limit a source file to declaring only one public type nor does it require the name of the source file to match a type declared in the source file.</p>
+    <p>Further articles in this tour explain these organizational blocks.</p>
+        </article>                    
         </section>
-        <section id="main-section">
-            <h2></h2>
-        </section>
-        <section id="main-section">
-            <h2></h2>
-        </section>
-    </div>  
+    <section class="main-section" id="Examples">
+        <header>Examples</header>
+        <article>
+            <pre tabindex="0"><code><span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>
+                {
+                    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> X { <span class="hljs-keyword">get</span>; }
+                    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Y { <span class="hljs-keyword">get</span>; }
+                    
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Point</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>)</span> =&gt; (X, Y) = (x, y);
+                }
+                </span></code></pre>
+        </article>
+
+    </section>
+    </main>
+    
 </body>
 </html>
